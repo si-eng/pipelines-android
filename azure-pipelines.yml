@@ -22,8 +22,9 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    contents: '**/*.apk'
-    targetFolder: '$(build.artifactStagingDirectory)'
+    SourceFolder: '$(agent.builddirectory)'
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
   displayName: Copy .apk files to artifact staging directory
 
 - task: PublishBuildArtifacts@1
